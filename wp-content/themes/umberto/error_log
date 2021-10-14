@@ -1,0 +1,12 @@
+[27-Nov-2020 01:31:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_singular() in /home/nckyyjeem43q/public_html/kediarice.com/wp-content/themes/umberto/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/nckyyjeem43q/public_html/kediarice.com/wp-content/themes/umberto/index.php on line 11
+[16-Jan-2021 22:37:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_singular() in /home/nckyyjeem43q/public_html/kediarice.com/wp-content/themes/umberto/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/nckyyjeem43q/public_html/kediarice.com/wp-content/themes/umberto/index.php on line 11
+[21-May-2021 23:50:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/nckyyjeem43q/public_html/kediarice.com/wp-content/themes/umberto/404.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/nckyyjeem43q/public_html/kediarice.com/wp-content/themes/umberto/404.php on line 13

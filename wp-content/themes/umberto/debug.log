@@ -1,0 +1,108 @@
+02.01.2018 11:19:21 Dispatch action: import_tpl
+02.01.2018 11:19:21 Import Theme Options
+02.01.2018 11:19:21 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/templates_options.txt successful
+02.01.2018 11:19:21 AJAX handler finished - send results to client: {"action":"import_tpl","error":"","start_from_id":0,"result":100}
+02.01.2018 11:19:21 Dispatch action: import_widgets
+02.01.2018 11:19:21 Import Widgets
+02.01.2018 11:19:21 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/widgets.txt successful
+02.01.2018 11:19:22 AJAX handler finished - send results to client: {"action":"import_widgets","error":"","start_from_id":0,"result":100}
+02.01.2018 11:19:22 Dispatch action: import_essgrids
+02.01.2018 11:19:22 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/ess_grid.json successful
+02.01.2018 11:19:22 Essential Grid import complete
+02.01.2018 11:19:22 AJAX handler finished - send results to client: {"action":"import_essgrids","error":"","start_from_id":0,"result":100}
+02.01.2018 11:19:23 Dispatch action: import_revslider
+02.01.2018 11:19:23 Import Revolution sliders
+02.01.2018 11:19:23 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/revslider.txt successful
+02.01.2018 11:19:23 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-1.zip successful
+02.01.2018 11:19:24 Slider "mushroom-slider-1.zip" imported
+02.01.2018 11:19:24 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-1.zip","result":20}
+02.01.2018 11:19:24 Dispatch action: import_revslider
+02.01.2018 11:19:24 Import Revolution sliders
+02.01.2018 11:19:24 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-24.zip successful
+02.01.2018 11:19:27 Slider "mushroom-slider-24.zip" imported
+02.01.2018 11:19:27 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-24.zip","result":40}
+02.01.2018 11:19:27 Dispatch action: import_revslider
+02.01.2018 11:19:27 Import Revolution sliders
+02.01.2018 11:19:27 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-3.zip successful
+02.01.2018 11:19:29 Slider "mushroom-slider-3.zip" imported
+02.01.2018 11:19:29 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-3.zip","result":60}
+02.01.2018 11:19:29 Dispatch action: import_revslider
+02.01.2018 11:19:29 Import Revolution sliders
+02.01.2018 11:19:29 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-5.zip successful
+02.01.2018 11:19:31 Slider "mushroom-slider-5.zip" imported
+02.01.2018 11:19:31 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-5.zip","result":80}
+02.01.2018 11:19:31 Dispatch action: import_revslider
+02.01.2018 11:19:31 Import Revolution sliders
+02.01.2018 11:19:31 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-4.zip successful
+02.01.2018 11:19:33 Slider "mushroom-slider-4.zip" imported
+02.01.2018 11:19:33 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-4.zip","result":100}
+02.01.2018 11:19:33 Dispatch action: import_woocommerce
+02.01.2018 11:19:33 Import dump file: "woocommerce.txt"
+02.01.2018 11:19:33 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/woocommerce.txt successful
+02.01.2018 11:19:33 Process table "woocommerce_attribute_taxomonies"
+02.01.2018 11:19:33 Imported 100%. Elapsed time 0 sec. of 108 sec.
+02.01.2018 11:19:33 Process table "woocommerce_downloadable_product_permissions"
+02.01.2018 11:19:33 Imported 100%. Elapsed time 0 sec. of 108 sec.
+02.01.2018 11:19:33 Process table "woocommerce_order_itemmeta"
+02.01.2018 11:19:33 Imported 100%. Elapsed time 0 sec. of 108 sec.
+02.01.2018 11:19:33 Process table "woocommerce_order_items"
+02.01.2018 11:19:33 Imported 100%. Elapsed time 0 sec. of 108 sec.
+02.01.2018 11:19:33 Process table "woocommerce_termmeta"
+02.01.2018 11:19:33 Imported 100%. Elapsed time 0 sec. of 108 sec.
+02.01.2018 11:19:33 AJAX handler finished - send results to client: {"action":"import_woocommerce","error":"","start_from_id":0,"result":100}
+02.01.2018 11:19:34 Dispatch action: import_end
+02.01.2018 11:19:34 AJAX handler finished - send results to client: {"action":"import_end","error":"","start_from_id":0,"result":100}
+06.12.2019 14:11:03 Dispatch action: import_tpl
+06.12.2019 14:11:03 Import Theme Options
+06.12.2019 14:11:03 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/templates_options.txt successful
+06.12.2019 14:11:03 AJAX handler finished - send results to client: {"action":"import_tpl","error":"","start_from_id":0,"result":100}
+06.12.2019 14:11:03 Dispatch action: import_widgets
+06.12.2019 14:11:03 Import Widgets
+06.12.2019 14:11:04 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/widgets.txt successful
+06.12.2019 14:11:04 AJAX handler finished - send results to client: {"action":"import_widgets","error":"","start_from_id":0,"result":100}
+06.12.2019 14:11:04 Dispatch action: import_essgrids
+06.12.2019 14:11:04 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/ess_grid.json successful
+06.12.2019 14:11:05 Essential Grid import complete
+06.12.2019 14:11:05 AJAX handler finished - send results to client: {"action":"import_essgrids","error":"","start_from_id":0,"result":100}
+06.12.2019 14:11:05 Dispatch action: import_revslider
+06.12.2019 14:11:05 Import Revolution sliders
+06.12.2019 14:11:05 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/revslider.txt successful
+06.12.2019 14:11:05 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-1.zip successful
+06.12.2019 14:11:06 Slider "mushroom-slider-1.zip" imported
+06.12.2019 14:11:06 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-1.zip","result":20}
+06.12.2019 14:11:06 Dispatch action: import_revslider
+06.12.2019 14:11:06 Import Revolution sliders
+06.12.2019 14:11:06 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-24.zip successful
+06.12.2019 14:11:07 Slider "mushroom-slider-24.zip" imported
+06.12.2019 14:11:07 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-24.zip","result":40}
+06.12.2019 14:11:07 Dispatch action: import_revslider
+06.12.2019 14:11:07 Import Revolution sliders
+06.12.2019 14:11:07 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-3.zip successful
+06.12.2019 14:11:08 Slider "mushroom-slider-3.zip" imported
+06.12.2019 14:11:08 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-3.zip","result":60}
+06.12.2019 14:11:08 Dispatch action: import_revslider
+06.12.2019 14:11:08 Import Revolution sliders
+06.12.2019 14:11:08 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-5.zip successful
+06.12.2019 14:11:09 Slider "mushroom-slider-5.zip" imported
+06.12.2019 14:11:09 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-5.zip","result":80}
+06.12.2019 14:11:09 Dispatch action: import_revslider
+06.12.2019 14:11:09 Import Revolution sliders
+06.12.2019 14:11:09 Download file http://mushroom-farm.ancorathemes.com/demo/default/revsliders/mushroom-slider-4.zip successful
+06.12.2019 14:11:10 Slider "mushroom-slider-4.zip" imported
+06.12.2019 14:11:10 AJAX handler finished - send results to client: {"action":"import_revslider","error":"","start_from_id":"revsliders\/mushroom-slider-4.zip","result":100}
+06.12.2019 14:11:10 Dispatch action: import_woocommerce
+06.12.2019 14:11:10 Import dump file: "woocommerce.txt"
+06.12.2019 14:11:10 Load data from the file http://mushroom-farm.ancorathemes.com/demo/default/woocommerce.txt successful
+06.12.2019 14:11:10 Process table "woocommerce_attribute_taxomonies"
+06.12.2019 14:11:10 Imported 100%. Elapsed time 0 sec. of 108 sec.
+06.12.2019 14:11:10 Process table "woocommerce_downloadable_product_permissions"
+06.12.2019 14:11:10 Imported 100%. Elapsed time 0 sec. of 108 sec.
+06.12.2019 14:11:10 Process table "woocommerce_order_itemmeta"
+06.12.2019 14:11:10 Imported 100%. Elapsed time 0 sec. of 108 sec.
+06.12.2019 14:11:10 Process table "woocommerce_order_items"
+06.12.2019 14:11:10 Imported 100%. Elapsed time 0 sec. of 108 sec.
+06.12.2019 14:11:10 Process table "woocommerce_termmeta"
+06.12.2019 14:11:10 Imported 100%. Elapsed time 0 sec. of 108 sec.
+06.12.2019 14:11:10 AJAX handler finished - send results to client: {"action":"import_woocommerce","error":"","start_from_id":0,"result":100}
+06.12.2019 14:11:11 Dispatch action: import_end
+06.12.2019 14:11:11 AJAX handler finished - send results to client: {"action":"import_end","error":"","start_from_id":0,"result":100}
