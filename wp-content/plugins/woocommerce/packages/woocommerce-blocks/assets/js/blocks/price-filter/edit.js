@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import {
 	Placeholder,
 	Disabled,
@@ -10,12 +10,12 @@ import {
 	ToggleControl,
 	Button,
 } from '@wordpress/components';
-import { PRODUCT_COUNT } from '@woocommerce/block-settings';
 import { getAdminLink } from '@woocommerce/settings';
+import { blocksConfig } from '@woocommerce/block-settings';
 import HeadingToolbar from '@woocommerce/editor-components/heading-toolbar';
 import BlockTitle from '@woocommerce/editor-components/block-title';
 import ToggleButtonControl from '@woocommerce/editor-components/toggle-button-control';
-import { Icon, bill, external } from '@woocommerce/icons';
+import { Icon, currencyDollar, external } from '@wordpress/icons';
 
 /**
  * Internal dependencies
@@ -25,12 +25,13 @@ import './editor.scss';
 
 export default function ( { attributes, setAttributes } ) {
 	const {
-		className,
 		heading,
 		headingLevel,
 		showInputFields,
 		showFilterButton,
 	} = attributes;
+
+	const blockProps = useBlockProps();
 
 	const getInspectorControls = () => {
 		return (
@@ -115,7 +116,7 @@ export default function ( { attributes, setAttributes } ) {
 	const noProductsPlaceholder = () => (
 		<Placeholder
 			className="wc-block-price-slider"
-			icon={ <Icon srcElement={ bill } /> }
+			icon={ <Icon icon={ currencyDollar } /> }
 			label={ __(
 				'Filter Products by Price',
 				'woocommerce'
@@ -138,7 +139,7 @@ export default function ( { attributes, setAttributes } ) {
 			>
 				{ __( 'Add new product', 'woocommerce' ) +
 					' ' }
-				<Icon srcElement={ external } />
+				<Icon icon={ external } />
 			</Button>
 			<Button
 				className="wc-block-price-slider__read_more_button"
@@ -151,13 +152,14 @@ export default function ( { attributes, setAttributes } ) {
 	);
 
 	return (
-		<>
-			{ PRODUCT_COUNT === 0 ? (
+		<div { ...blockProps }>
+			{ blocksConfig.productCount === 0 ? (
 				noProductsPlaceholder()
 			) : (
-				<div className={ className }>
+				<>
 					{ getInspectorControls() }
 					<BlockTitle
+						className="wc-block-price-filter__title"
 						headingLevel={ headingLevel }
 						heading={ heading }
 						onChange={ ( value ) =>
@@ -167,8 +169,8 @@ export default function ( { attributes, setAttributes } ) {
 					<Disabled>
 						<Block attributes={ attributes } isEditor={ true } />
 					</Disabled>
-				</div>
+				</>
 			) }
-		</>
+		</div>
 	);
 }

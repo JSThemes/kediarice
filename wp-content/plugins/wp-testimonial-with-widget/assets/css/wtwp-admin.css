@@ -1,0 +1,74 @@
+.wtwp-pro-tag {padding: 4px 7px 4px 5px;background-color:#cdd9f3;color: #1e2b48; position: relative; font-size: 10px; margin: 0 10px; display: inline-block; line-height: 1.1;}
+.wtwp-pro-tag::before { content: ""; left: -10px; top: 0; border-top: 10px solid transparent;border-right: 10px solid #cdd9f3;border-bottom: 10px solid transparent; position: absolute;}
+.wtwp-pro-feature { opacity: 0.5;}
+.wtwp-pro-feature:hover{opacity: 0.8;}
+.pro-notice{background-color: #fcecce; border: 1px dashed #f8c057; padding: 3px 10px; font-size:15px;}
+#wtwp-post-metabox-pro tr.wtwp-pro-feature{border-bottom:1px solid #f1f1f1;}
+#wtwp-post-metabox-pro tr.wtwp-pro-feature th,
+#wtwp-post-metabox-pro tr.wtwp-pro-feature td{ vertical-align:top; padding:10px; }
+#wtwp-post-metabox-pro tr.wtwp-pro-feature th:first-child,
+#wtwp-post-metabox-pro tr.wtwp-pro-feature td:first-child{width:40%; }
+
+/************** Start - Solutions & Features Page CSS ****************/
+.testimonial_page_wtwp-solutions-features #wpcontent{padding: 0 0 40px; line-height: normal;}
+.wtwp-sf-wrap .wtwp-sf-inr{padding: 30px 40px 0;}
+.wtwp-sf-wrap .wtwp-sf-welcome-wrap{background-color: #fff; justify-content: space-between; box-shadow: 0 3px 2px rgba(0,0,0,.05); margin-bottom: 20px; position: relative; color: #23282d;}
+.wtwp-sf-welcome-wrap .wtwp-sf-welcome-inr{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; padding: 30px; gap: 10px;}
+.wtwp-sf-welcome-wrap .wtwp-sf-welcome-inr > *{flex: 1;}
+.wtwp-sf-subtitle{color: #6c7781; font-size: 16px; font-weight: 600; margin-bottom: 6px;}
+.wtwp-sf-title{font-size: 32px; font-weight: 600; color: #23282d; margin-top: 0; margin-bottom: 20px;}
+.wtwp-sf-ttl{font-size: 23px; font-weight: 600; color: #23282d; margin-top: 0; margin-bottom: 20px;}
+.wtwp-sf-content{margin: 0 0 20px; font-size: 16px; line-height: 150%; color: #646970;}
+.wtwp-sf-btn{display: inline-block; font-size: 16px; padding: 10px 10px;  background-color: #46b450; border-color: #46b450; color: #fff !important; font-weight: 600; border-radius: 3px; text-decoration: none;}
+.wtwp-sf-btn-orange{ background-color: #FF1000; border-color: #FF1000 ;}
+.wtwp-sf-btn:hover,
+.wtwp-sf-btn:focus{background-color: #3fa548; border-color: #3fa548;}
+.wtwp-sf-btn-orange:hover,
+.wtwp-sf-btn-orange:focus {background-color: #D01003 ; border-color: #D01003 ;}
+.wtwp-sf-fp-ttl{font-size: 23px; line-height: 1.4em; margin-bottom: 10px; font-weight: 600; text-align: center;}
+.wtwp-sf-fp-box-wrp{display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 10px;}
+.wtwp-sf-fp-box-wrp .wtwp-sf-fp-box{position: relative; border: 1px solid #c3e6cb; padding: 10px; text-align: center;}
+.wtwp-sf-fp-box-wrp .wtwp-sf-pro-box{border: 1px solid #f5c6cb;}
+.wtwp-sf-fp-box-wrp>*{flex: 0 0 26.8%;}
+.wtwp-sf-fp-box-wrp i.dashicons{font-size: 25px; display: inline-block; color: #528bfa; width: 30px; height: 30px; line-height: 30px;}
+.wtwp-sf-fp-box-wrp .wtwp-sf-box-ttl{font-size: 16px;}
+.wtwp-sf-tag{position: absolute; display: inline-block; top: 0; right: 0; background-color: #d4edda; color: #155724; padding: 1px 8px; text-transform: uppercase; font-size: 12px; }
+.wtwp-sf-pro-box .wtwp-sf-tag{background-color: #f8d7da; color: #721c24;}
+.wtwp-center{ text-align: center; }
+.wtwp-rc-wrap{max-width: 550px; margin: 15px auto 0 auto; text-align: left;}
+.wtwp-rc-wrap .wtwp-rc-inr{display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin-bottom: 15px;}
+.wtwp-rc-wrap .wtwp-rc-icon{margin-right: 15px; width: 60px; height: 60px;}
+.wtwp-rc-wrap .wtwp-rc-icon img{width: 100%; height: 100%;}
+.wtwp-rc-wrap .wtwp-rc-inr h3{font-size: 16px; margin: 0 0 5px 0;}
+.wtwp-rc-wrap .wtwp-rc-inr p{margin: 0;}
+.wtwp-rc-wrap .wtwp-rc-bg-box{ background-color:#f1f1f1; border: 1px solid #d1d1d1; padding: 5px 10px; }
+
+.wtwp-solutions-section{margin-bottom: 20px;}
+.wtwp-solutions-box-wrap{display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 15px;}
+.wtwp-solutions-box-wrap>*{flex: 1 0 21%;}
+.wtwp-solutions-box-wrap .wtwp-solutions-box-grid{background-color: #ffffff; box-shadow: 0 0px 5px rgba(0, 0, 0, 0.08);}
+.wtwp-solutions-box-wrap .wtwp-box-ttl{background-color: #cce5ff; color: #004085; font-size: 16px; padding: 10px;}
+.wtwp-solutions-box-wrap ul{padding: 0 10px; margin: 0;}
+.wtwp-solutions-box-wrap ul li{position: relative; font-size: 14px; border-bottom: 1px solid #e7e7e7; margin: 0; padding: 8px 0;}
+.wtwp-solutions-box-wrap ul li:last-child{border-bottom: none;}
+
+.wtwp-features-section{background-color: #ffffff; box-shadow: 0 3px 2px rgba(0,0,0,.05);}
+.wtwp-features-ttl{background-color: #d4edda; color: #155724; padding: 10px 30px; margin-bottom: 15px;}
+.wtwp-features-ttl h2{margin-bottom: 5px; color: #155724;}
+.wtwp-sf-cont{color: #464646;}
+.wtwp-features-section .wtwp-features-section-inr{padding: 15px 30px; margin-bottom:30px; text-align:center;}
+.wtwp-features-section ul.wtwp-features-box-grid{margin: 0 0 15px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 15px; list-style: none !important;}
+ul.wtwp-features-box-grid>*{flex: 32%; text-align:center; font-size:13px; font-weight:bold;}
+ul.wtwp-features-box-grid li{border:1px solid #f1f1f1; padding:10px 0;}
+ul.wtwp-features-box-grid .wtwp-popup-icon img{width: 100%; max-width: 100%; height: auto;}
+
+.wtwp-testimonial-section-inr{text-align:center;}
+.wtwp-testimonial-box-wrap{margin-bottom:15px;}
+.wtwp-testimonial-box-wrap{display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: 15px;}
+.wtwp-testimonial-box-wrap>*{flex: 1 0 21%;}
+.wtwp-testimonial-box-wrap .wtwp-testimonial-box-grid{border: 1px solid #ddd;background:#fff;  box-shadow: 0 3px 2px rgba(0,0,0,.05);
+padding: 30px;text-align: center;display: flex;flex-direction: column;align-items: center;}
+.wtwp-testimonial-box-wrap h3{margin-top:0px;}
+.wtwp-testimonial-clnt{margin:15px 0 0 0; font-size:16px; font-weight:bold;}
+
+/************** End - Solutions & Features Page CSS ****************/

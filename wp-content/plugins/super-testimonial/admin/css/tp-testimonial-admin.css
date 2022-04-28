@@ -1,0 +1,185 @@
+/* 
+  Super Testimonail Admin CSS
+  Author : Themepoints
+  Vesrsion : 2.5
+ */
+
+#tp_testimonials_shortcode_title {
+  border-bottom: 1px solid #dddddd;
+  color: #777777;
+  font-weight: normal;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 20px 20px 0;
+}
+#tp_testimonials_shortcode_para {
+  color: #777777;
+  margin: 0 20px 20px 0;
+}
+.testimonials_btn_area a {
+    border: 1px solid #ddd;
+    padding: 10px 10px;
+    background: #0F6FA7;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+    color: #fffdfd;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.testimonials_btn_area {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+}
+
+.extension-single-list {
+    background: #fff;
+    padding: 40px 0px;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 22.7%;
+    margin: 0 3% 3% 0;
+}
+
+.extension-single-list h2 {
+    margin-top: 0;
+    font-size: 25px;
+}
+span.title-count.theme-count {
+    background: #2271b1;
+}
+.extension-actions {}
+
+.extension-actions a.button.button-primary {
+    border: 0;
+    border-radius: 0;
+    padding: 10px 30px;
+}
+
+/* Normal desktop :1920px. */
+@media (min-width: 1700px) and (max-width: 1920px) {
+  .extension-single-list{
+    width: 30%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 1700px) {
+  .extension-single-list{
+    width: 30%;
+  }
+}
+
+/* XL Device :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) { 
+  .extension-single-list{
+    width: 30%;
+  }
+}
+
+
+/* LG Device :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .extension-single-list{
+    width: 47%;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 25px;
+  }
+}
+
+
+/* MD Device :768px. */
+@media (min-width: 768px) and (max-width: 991px) { 
+  .extension-single-list{
+    width: 47%;
+  }
+  .extension-single-list h2 {
+      margin-top: 0;
+      font-size: 20px;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 25px;
+  }
+}
+
+
+/* Extra small Device. */
+@media (max-width: 767px) { 
+  .extension-single-list{
+    width: 47%;
+  }
+  .extension-single-list h2 {
+      margin-top: 0;
+      font-size: 20px;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 25px;
+  }
+}
+
+
+/* 6. Extra small Device : 600px */
+@media (max-width: 600px) { 
+  .extension-single-list{
+    width: 100%;
+  }
+  .extension-single-list h2 {
+      margin-top: 0;
+      font-size: 18px;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 20px;
+  }
+
+}
+
+
+/* 6. Extra small Device : 575px */
+@media (max-width: 575px) { 
+
+  .extension-single-list{
+    width: 100%;
+  }
+  .extension-single-list h2 {
+      margin-top: 0;
+      font-size: 18px;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 20px;
+  }
+
+}
+
+
+/* Extra small Device. */
+@media (max-width: 480px) { 
+  .extension-single-list{
+    width: 100%;
+  }
+  .extension-single-list h2 {
+      margin-top: 0;
+      font-size: 18px;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 20px;
+  }
+}
+
+/* Extra small Device. */
+@media (max-width: 320px) { 
+  .extension-single-list{
+    width: 100%;
+  }
+  .extension-single-list h2 {
+      margin-top: 0;
+      font-size: 18px;
+  }
+  .extension-actions a.button.button-primary {
+      padding: 5px 20px;
+  }
+}

@@ -3,7 +3,11 @@
  */
 import { __, sprintf, _n } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
-import { InspectorControls, BlockControls } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	BlockControls,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import {
 	Placeholder,
 	Disabled,
@@ -13,20 +17,22 @@ import {
 	ToolbarGroup,
 	withSpokenMessages,
 } from '@wordpress/components';
-import { Icon, server, external } from '@woocommerce/icons';
-import { SearchListControl } from '@woocommerce/components';
-import { mapValues, toArray, sortBy, find } from 'lodash';
-import { ATTRIBUTES } from '@woocommerce/block-settings';
-import { getAdminLink } from '@woocommerce/settings';
+import { Icon, category, external } from '@wordpress/icons';
+import { SearchListControl } from '@woocommerce/editor-components/search-list-control';
+import { mapValues, toArray, sortBy } from 'lodash';
+import { getAdminLink, getSetting } from '@woocommerce/settings';
 import HeadingToolbar from '@woocommerce/editor-components/heading-toolbar';
 import BlockTitle from '@woocommerce/editor-components/block-title';
 import ToggleButtonControl from '@woocommerce/editor-components/toggle-button-control';
+import classnames from 'classnames';
 
 /**
  * Internal dependencies
  */
 import Block from './block.js';
 import './editor.scss';
+
+const ATTRIBUTES = getSetting( 'attributes', [] );
 
 const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 	const {
@@ -44,6 +50,8 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 	const [ isEditing, setIsEditing ] = useState(
 		! attributeId && ! isPreview
 	);
+
+	const blockProps = useBlockProps();
 
 	const getBlockControls = () => {
 		return (
@@ -211,7 +219,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 					) }
 					initialOpen={ false }
 				>
-					{ renderAttributeControl() }
+					{ renderAttributeControl( { isCompact: true } ) }
 				</PanelBody>
 			</InspectorControls>
 		);
@@ -220,7 +228,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 	const noAttributesPlaceholder = () => (
 		<Placeholder
 			className="wc-block-attribute-filter"
-			icon={ <Icon srcElement={ server } /> }
+			icon={ <Icon icon={ category } /> }
 			label={ __(
 				'Filter Products by Attribute',
 				'woocommerce'
@@ -245,7 +253,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 			>
 				{ __( 'Add new attribute', 'woocommerce' ) +
 					' ' }
-				<Icon srcElement={ external } />
+				<Icon icon={ external } />
 			</Button>
 			<Button
 				className="wc-block-attribute-filter__read_more_button"
@@ -273,10 +281,9 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 		}
 
 		const selectedId = selected[ 0 ].id;
-		const productAttribute = find( ATTRIBUTES, [
-			'attribute_id',
-			selectedId.toString(),
-		] );
+		const productAttribute = ATTRIBUTES.find(
+			( attribute ) => attribute.attribute_id === selectedId.toString()
+		);
 
 		if ( ! productAttribute || attributeId === selectedId ) {
 			return;
@@ -287,14 +294,14 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 		setAttributes( {
 			attributeId: selectedId,
 			heading: sprintf(
-				// Translators: %s attribute name.
+				/* translators: %s attribute name. */
 				__( 'Filter by %s', 'woocommerce' ),
 				attributeName
 			),
 		} );
 	};
 
-	const renderAttributeControl = () => {
+	const renderAttributeControl = ( { isCompact } ) => {
 		const messages = {
 			clear: __(
 				'Clear selected attribute',
@@ -311,7 +318,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 			),
 			selected: ( n ) =>
 				sprintf(
-					// Translators: %d is the number of attributes selected.
+					/* translators: %d is the number of attributes selected. */
 					_n(
 						'%d attribute selected',
 						'%d attributes selected',
@@ -346,6 +353,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 				onChange={ onChange }
 				messages={ messages }
 				isSingle
+				isCompact={ isCompact }
 			/>
 		);
 	};
@@ -354,7 +362,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 		return (
 			<Placeholder
 				className="wc-block-attribute-filter"
-				icon={ <Icon srcElement={ server } /> }
+				icon={ <Icon icon={ category } /> }
 				label={ __(
 					'Filter Products by Attribute',
 					'woocommerce'
@@ -365,7 +373,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 				) }
 			>
 				<div className="wc-block-attribute-filter__selection">
-					{ renderAttributeControl() }
+					{ renderAttributeControl( { isCompact: false } ) }
 					<Button isPrimary onClick={ onDone }>
 						{ __( 'Done', 'woocommerce' ) }
 					</Button>
@@ -377,14 +385,20 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 	return Object.keys( ATTRIBUTES ).length === 0 ? (
 		noAttributesPlaceholder()
 	) : (
-		<>
+		<div { ...blockProps }>
 			{ getBlockControls() }
 			{ getInspectorControls() }
 			{ isEditing ? (
 				renderEditMode()
 			) : (
-				<div className={ className }>
+				<div
+					className={ classnames(
+						className,
+						'wc-block-attribute-filter'
+					) }
+				>
 					<BlockTitle
+						className="wc-block-attribute-filter__title"
 						headingLevel={ headingLevel }
 						heading={ heading }
 						onChange={ ( value ) =>
@@ -396,7 +410,7 @@ const Edit = ( { attributes, setAttributes, debouncedSpeak } ) => {
 					</Disabled>
 				</div>
 			) }
-		</>
+		</div>
 	);
 };
 

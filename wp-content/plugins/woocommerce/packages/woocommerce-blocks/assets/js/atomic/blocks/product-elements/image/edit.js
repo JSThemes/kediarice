@@ -3,8 +3,8 @@
  */
 import { __ } from '@wordpress/i18n';
 import { Disabled, PanelBody, ToggleControl } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
-import { createInterpolateElement } from 'wordpress-element';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { createInterpolateElement } from '@wordpress/element';
 import ToggleButtonControl from '@woocommerce/editor-components/toggle-button-control';
 import { getAdminLink } from '@woocommerce/settings';
 
@@ -17,14 +17,16 @@ import { BLOCK_TITLE, BLOCK_ICON } from './constants';
 
 const Edit = ( { attributes, setAttributes } ) => {
 	const {
-		productLink,
+		showProductLink,
 		imageSizing,
 		showSaleBadge,
 		saleBadgeAlign,
 	} = attributes;
 
+	const blockProps = useBlockProps();
+
 	return (
-		<>
+		<div { ...blockProps }>
 			<InspectorControls>
 				<PanelBody
 					title={ __( 'Content', 'woocommerce' ) }
@@ -38,10 +40,10 @@ const Edit = ( { attributes, setAttributes } ) => {
 							'Links the image to the single product listing.',
 							'woocommerce'
 						) }
-						checked={ productLink }
+						checked={ showProductLink }
 						onChange={ () =>
 							setAttributes( {
-								productLink: ! productLink,
+								showProductLink: ! showProductLink,
 							} )
 						}
 					/>
@@ -145,7 +147,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 			<Disabled>
 				<Block { ...attributes } />
 			</Disabled>
-		</>
+		</div>
 	);
 };
 

@@ -5,38 +5,44 @@
 import { addQueryArgs } from '@wordpress/url';
 import apiFetch from '@wordpress/api-fetch';
 import { flatten, uniqBy } from 'lodash';
-import { IS_LARGE_CATALOG, LIMIT_TAGS } from '@woocommerce/block-settings';
+import { getSetting } from '@woocommerce/settings';
+import { blocksConfig } from '@woocommerce/block-settings';
 
 /**
  * Get product query requests for the Store API.
  *
  * @param {Object} request A query object with the list of selected products and search term.
- * @param {Array} request.selected Currently selected products.
- * @param {string} request.search Search string.
- * @param {Array} request.queryArgs Query args to pass in.
+ * @param {number[]} request.selected Currently selected products.
+ * @param {string=} request.search Search string.
+ * @param {(Record<string, unknown>)=} request.queryArgs Query args to pass in.
  */
 const getProductsRequests = ( {
 	selected = [],
 	search = '',
-	queryArgs = [],
+	queryArgs = {},
 } ) => {
+	const isLargeCatalog = blocksConfig.productCount > 100;
 	const defaultArgs = {
-		per_page: IS_LARGE_CATALOG ? 100 : 0,
+		per_page: isLargeCatalog ? 100 : 0,
 		catalog_visibility: 'any',
 		search,
 		orderby: 'title',
 		order: 'asc',
 	};
 	const requests = [
-		addQueryArgs( '/wc/store/products', { ...defaultArgs, ...queryArgs } ),
+		addQueryArgs( '/wc/store/v1/products', {
+			...defaultArgs,
+			...queryArgs,
+		} ),
 	];
 
 	// If we have a large catalog, we might not get all selected products in the first page.
-	if ( IS_LARGE_CATALOG && selected.length ) {
+	if ( isLargeCatalog && selected.length ) {
 		requests.push(
-			addQueryArgs( '/wc/store/products', {
+			addQueryArgs( '/wc/store/v1/products', {
 				catalog_visibility: 'any',
 				include: selected,
+				per_page: 0,
 			} )
 		);
 	}
@@ -48,14 +54,16 @@ const getProductsRequests = ( {
  * Get a promise that resolves to a list of products from the Store API.
  *
  * @param {Object} request A query object with the list of selected products and search term.
- * @param {Array} request.selected Currently selected products.
- * @param {string} request.search Search string.
- * @param {Array} request.queryArgs Query args to pass in.
+ * @param {number[]} request.selected Currently selected products.
+ * @param {string=} request.search Search string.
+ * @param {(Record<string, unknown>)=} request.queryArgs Query args to pass in.
+ * @return {Promise<unknown>} Promise resolving to a Product list.
+ * @throws Exception if there is an error.
  */
 export const getProducts = ( {
 	selected = [],
 	search = '',
-	queryArgs = [],
+	queryArgs = {},
 } ) => {
 	const requests = getProductsRequests( { selected, search, queryArgs } );
 
@@ -80,7 +88,7 @@ export const getProducts = ( {
  */
 export const getProduct = ( productId ) => {
 	return apiFetch( {
-		path: `/wc/store/products/${ productId }`,
+		path: `/wc/store/v1/products/${ productId }`,
 	} );
 };
 
@@ -89,7 +97,7 @@ export const getProduct = ( productId ) => {
  */
 export const getAttributes = () => {
 	return apiFetch( {
-		path: `wc/store/products/attributes`,
+		path: `wc/store/v1/products/attributes`,
 	} );
 };
 
@@ -100,7 +108,7 @@ export const getAttributes = () => {
  */
 export const getTerms = ( attribute ) => {
 	return apiFetch( {
-		path: `wc/store/products/attributes/${ attribute }/terms`,
+		path: `wc/store/v1/products/attributes/${ attribute }/terms`,
 	} );
 };
 
@@ -112,19 +120,20 @@ export const getTerms = ( attribute ) => {
  * @param {string} request.search Search string.
  */
 const getProductTagsRequests = ( { selected = [], search } ) => {
+	const limitTags = getSetting( 'limitTags', false );
 	const requests = [
-		addQueryArgs( `wc/store/products/tags`, {
-			per_page: LIMIT_TAGS ? 100 : 0,
-			orderby: LIMIT_TAGS ? 'count' : 'name',
-			order: LIMIT_TAGS ? 'desc' : 'asc',
+		addQueryArgs( `wc/store/v1/products/tags`, {
+			per_page: limitTags ? 100 : 0,
+			orderby: limitTags ? 'count' : 'name',
+			order: limitTags ? 'desc' : 'asc',
 			search,
 		} ),
 	];
 
 	// If we have a large catalog, we might not get all selected products in the first page.
-	if ( LIMIT_TAGS && selected.length ) {
+	if ( limitTags && selected.length ) {
 		requests.push(
-			addQueryArgs( `wc/store/products/tags`, {
+			addQueryArgs( `wc/store/v1/products/tags`, {
 				include: selected,
 			} )
 		);
@@ -157,7 +166,7 @@ export const getProductTags = ( { selected = [], search } ) => {
  */
 export const getCategories = ( queryArgs ) => {
 	return apiFetch( {
-		path: addQueryArgs( `wc/store/products/categories`, {
+		path: addQueryArgs( `wc/store/v1/products/categories`, {
 			per_page: 0,
 			...queryArgs,
 		} ),
@@ -171,7 +180,7 @@ export const getCategories = ( queryArgs ) => {
  */
 export const getCategory = ( categoryId ) => {
 	return apiFetch( {
-		path: `wc/store/products/categories/${ categoryId }`,
+		path: `wc/store/v1/products/categories/${ categoryId }`,
 	} );
 };
 
@@ -182,7 +191,7 @@ export const getCategory = ( categoryId ) => {
  */
 export const getProductVariations = ( product ) => {
 	return apiFetch( {
-		path: addQueryArgs( `wc/store/products`, {
+		path: addQueryArgs( `wc/store/v1/products`, {
 			per_page: 0,
 			type: 'variation',
 			parent: product,
